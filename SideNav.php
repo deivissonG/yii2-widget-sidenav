@@ -314,6 +314,9 @@ class SideNav extends Menu implements BootstrapInterface
             }
         }
         $icon = empty($item['icon']) ? '' : '<span class="' . $this->iconPrefix . $item['icon'] . '"></span> &nbsp;';
+        if (!empty($item['iconSvg'])) {
+            $icon = $item['iconSvg'] . ' &nbsp;';
+        }
         unset($item['icon'], $item['top']);
         return strtr($template, [
             '{url}' => $url,
